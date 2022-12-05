@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* to work with rem instead of px 16px = 1.6rem */
+
+html {
+    font-size: 10px;
+}
+
+/* VARIABLES */
+
+:root {
+
+    /* COLORS */
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --box-shadow: hsla(224, 23%, 55%, .3);
+    --background-plan: hsla(224, 30%, 95%, .6);
+    --dark-blue: hsl(223, 47%, 23%);
+    --hover: hsla(245, 75%, 52%, 0.65);
+    
+    /* FONT SIZE */
+    --default: 1.6rem;
+    --paragraph: 1.5rem;
+    --info-summary: 2.3rem;
+
+    /* PROPERTY */
+    --box-shadow-container :0px 5px 30px 15px var(--box-shadow);
+    --box-shadow-btn: 0px 5px 20px 10px var(--box-shadow);
+}
+
+/* GENERALS */
+
+body {
+    font-size: var(--default);
+    font-family: 'Red Hat Display', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(images/pattern-background-mobile.svg) no-repeat top center;
+    background-size: contain;
+    background-color: var(--pale-blue);
+}
+
+img {
+    display: block;
+}
+
+.wrap {
+    display: block;
+}
+
+.btn {
+    width: 100%;
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+    border: none;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: var(--default);
+    cursor: pointer;
+}
+
+/* MOBILE FIRST WORKFLOW */
+
+.container {
+    width: 100%;
+    max-width: 34.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-pale-blue);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow:  var(--box-shadow-container);
+}
+
+.text-box {
+    width: 100%;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info {
+   width: 100%;
+}
+
+.info__summary {
+    font-size: var(--info-summary);
+    font-weight: 900;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+.info__text {
+    color: var(--desaturated-blue);
+    line-height: 2.5rem;
+    text-align: justify;
+    text-align-last: center;
+    padding: 2rem;
+    font-size: var(--paragraph);
+}
+
+.plan {
+    width: 100%;
+    background-color: var(--background-plan);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1.8rem 0;
+}
+
+.plan__text {
+    font-weight: 900;
+    color: var(--dark-blue);
+}
+
+.plan__text span {
+    color: var(--desaturated-blue);
+    font-weight: 500;
+}
+
+a.plan__change {
+    font-weight: 900;
+}
+
+a.plan__change:hover {
+    color: var(--hover);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.cta {
+    width: 100%;
+    padding: 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.cta__payment {
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    box-shadow: var(--box-shadow-btn);
+}
+
+.cta__payment:hover {
+    background-color: var(--hover);
+    transition: .2s ease;
+}
+
+.cta__cancel {
+    padding-top: 2.5rem;
+    background-color: transparent;
+    color: var(--desaturated-blue);
+}
+
+.cta__cancel:hover {
+    color: var(--dark-blue);
+}
+
+/* DESKTOP WORKFLOW */
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        background: url(images/pattern-background-desktop.svg) repeat-x top center;
+        background-size: contain;
+        background-color: var(--pale-blue);
+    }
+}
